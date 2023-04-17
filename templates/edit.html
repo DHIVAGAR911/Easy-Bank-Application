@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New user</title>
+
+
+
+   <script type="text/javascript">
+
+        function validate()
+        {
+            var acc_number=document.getElementById("anumber");
+            var Custom_id=document.getElementById("C_id");
+            var addre=document.getElementById("aaddress");
+            var temp_psw=document.getElementById("psw");
+
+            if(acc_number.value.trim()=="" )
+                {
+                    alert("no blank value allowed");
+                    return false;
+                }
+            else if (Custom_id.value.trim()=="")
+                {
+                   alert("no blank value allowed");
+                    return false;
+                }
+            else if (addre.value.trim()=="")
+                {
+                  alert("no blank value allowed");
+                 return false;
+                }
+            else if (temp_psw.value.trim()=="")
+                {
+                   alert("no blank value allowed");
+                    return false;
+                }
+            else
+            {
+                   true;
+            }
+        }
+
+    </script>  
+
+</head>
+<body>
+    
+    <form onsubmit="return validate();"  action="{{url_for('edit',id =data.account_number)}}" method="post">
+        <div class="container">
+          <h1> Updates</h1>
+
+        
+          <label for="abranch"><b>Branch_code</b></label>
+          <input id="abranch" type="number" placeholder="4-Digit" value="{{datas.Branch_code}}" name="abranch" required >
+
+        
+          <label for="C_id"><b>Customer ID </b></label>
+          <input id="C_id" type="number" placeholder="4_digits" value="{{datas.customer_id}}" name="C_id" required >
+
+          <label for="C_name"><b>Customer name </b></label>
+          <input  id="C_name" type="text" placeholder="Enter name " value="{{datas.customer_name}}" name="C_name" required>
+     
+          <label for="Mob_nu"><b>Mobile Number </b></label>
+          <input id="Mob_nu" type="number" placeholder="Enter Contact No " value="{{datas.mobile_number}}" name="Mob_nu" required >
+
+   
+          <label for="aaddress"><b>address</b></label>
+          <input id="aaddress" type="text" placeholder="Enter your address" value="{{datas.address}}" name="aaddress" required >
+
+          <label for="balance"><b>Bank_Balance</b></label>
+          <input id="balance" type="number" placeholder="initial payment" value="{{datas.Balance}}" name="balance" required >
+      
+          <label for="psw"><b>Temp.Password</b></label>
+          <input id="psw"   type="password" placeholder="Enter Password" value="{{datas.Password}}" name="psw" required>
+
+          <div class="clearfix">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn">Update Account</button>
+          </div>
+
+    
+        </div>
+      </form>
+</body>
+</html>

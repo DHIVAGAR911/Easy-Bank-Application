@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer</title>
+    <script type="text/javascript">
+
+        function validate()
+        {
+            var account_number=document.getElementById("account_number");
+            var Amount=document.getElementById("Amount");
+            var Password=document.getElementById('Password');
+  
+            if(account_number.value.trim()=="" )
+                {
+                    alert("please enter the account_number");
+                    return false;
+                }
+            else if (Amount.value.trim()=="")
+                {
+                   alert("no blank value allowed");
+                    return false;
+                }
+            else if (Password.value.trim()=="")
+                {
+                  alert("no blank value allowed");
+                 return false;
+                }
+            else
+            {
+                   true;
+            }
+        }
+  
+      </script>
+
+</head>
+<body>
+    <h1 style="text-align:center;"> welcome to money Transfer</h1>
+
+    <ul>
+        <li><a href="#">Acc.No : {{session['account_number']}} </a></li><br>
+        <li><a href="#">Cus_Id : {{session['customer_id']}} </a></li><br>
+         
+    </ul>        
+                                   
+    <form onsubmit="return validate();" action="{{url_for('user_action')}}" method="post">
+
+        <form >
+            <label for="account_number"><b>Account number</b></label>
+            <input type="number" id="account_number" placeholder="Enter your accouNT number" name="account_number" ><br><br>
+        </form>
+    
+        <form>
+           <label for="Balance"><b>Enter Amount</b></label>
+            <input type="number" id ="Balance" placeholder="Enter Amount" name="Balance" ><br><br>
+
+            <label for="Password"><b>Password</b></label>
+            <input type="password" id ="Password" placeholder="Enter Password" name="Password" ><br><br>
+           
+            <button type="submit">Click For Pay</button>
+        </form>
+    </form>
+</body>
+</html>

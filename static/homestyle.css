@@ -1,0 +1,28 @@
+*{
+	margin:0px;
+	padding:0px;
+  background-color: bisque;
+}
+
+html, body {
+    margin:0;
+    height:100%;
+  }
+  
+h1{
+	text-align:center;
+	border-bottom:1px solid grey;
+	font-family:Galada;
+	padding:20px;
+	margin-bottom:25px;
+	color:#e75c5c;
+}
+ul 
+{
+
+    text-align:center;
+    font-family:Galada;
+    
+
+}
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New user</title>
+
+
+
+    <script type="text/javascript">
+
+        function validate()
+        {
+            var acc_number=document.getElementById("anumber");
+            var Custom_id=document.getElementById("C_id");
+            var addre=document.getElementById("aaddress");
+            var temp_psw=document.getElementById("psw");
+
+            if(acc_number.value.trim()=="" )
+                {
+                    alert("no blank value allowed");
+                    return false;
+                }
+            else if (Custom_id.value.trim()=="")
+                {
+                   alert("no blank value allowed");
+                    return false;
+                }
+            else if (addre.value.trim()=="")
+                {
+                  alert("no blank value allowed");
+                 return false;
+                }
+            else if (temp_psw.value.trim()=="")
+                {
+                   alert("no blank value allowed");
+                    return false;
+                }
+            else
+            {
+                   true;
+            }
+        }
+
+    </script>
+
+
+
+
+</head>
+<body style="background-color: cyan;">                                            
+    
+    <form onsubmit="return validate();"  action="{{url_for('newuser')}}" method="post">
+        <div class="container">
+          <h1>Create a account for new customer</h1>
+          <p  style="font-size: 20px;">Please fill in this form to create an account.</p>
+          <hr>
+      
+          <label for="abranch"><b>Branch_code :</b></label>
+          <input id="abranch"type="number" placeholder="4-Digit" name="abranch" ><br><br>
+
+          <label for="anumber"><b>Account number :</b></label>
+          <input id="anumber"type="number" placeholder="12_digits" name="anumber" ><br><br>
+
+          <label for="C_id"><b>Customer ID :</b></label>
+          <input  id="C_id"type="number" placeholder="4_digits" name="C_id" ><br><br>
+
+          <label for="C_name"><b>Customer name :</b></label>
+          <input  id="C_name"type="text" placeholder="Enter name " name="C_name" ><br><br>
+     
+          <label for="Mob_nu"><b>Mobile Number :</b></label>
+          <input  id="Mob_nu"type="number" placeholder="Enter Contact No " name="Mob_nu" ><br><br>
+
+
+          <label for="aaddress"><b>address :</b></label>
+          <input  id="aaddress"type="text" placeholder="Enter your address" name="aaddress" ><br><br>
+
+          <label for="balance"><b>Bank_Balance :</b></label>
+          <input  id="balance"type="number" placeholder="initial payment" name="balance" ><br><br>
+      
+          <label for="psw"><b>Temp.Password :</b></label>
+          <input  id="psw"type="password" placeholder="Enter Password" name="psw" ><br><br>
+
+          <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+          </label>
+      
+          <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      
+          <div class="clearfix">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn">Create Account</button>
+          </div>
+        </div>
+      </form>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>admin</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='admin.css')}}">
+    <style type=text/css> 
+    
+        header * {
+        display: inline;
+        }
+        header li {
+        margin: 50px;
+        }
+        header li a {
+        color: blue;
+        text-decoration: none;
+        }
+        </style> 
+       <script type="text/javascript">
+
+            function validate()
+            {
+                var Branch_code=document.getElementById("Branch_code");
+                var Branch_manager=document.getElementById("Branch_manager");
+                var Admin_Id_Number=document.getElementById('Admin_Id_Number');
+                var Admin_password =document.getElementById("Admin_password ");
+
+                if(Branch_code.value.trim()=="" )
+                    {
+                        alert("please enter the branch code");
+                        return false;
+                    }
+                else if (Branch_manager.value.trim()=="")
+                    {
+                       alert("no blank value allowed");
+                        return false;
+                    }
+                else if (Admin_Id_Number.value.trim()=="")
+                    {
+                      alert("no blank value allowed");
+                     return false;
+                    }
+                else if (Admin_password.value.trim()=="")
+                    {
+                       alert("no blank value allowed");
+                        return false;
+                    }
+                else
+                {
+                       true;
+                }
+            }
+
+        </script> 
+</head>
+<body>
+    
+    <h3> Hello, Please the fill your details ...</h3>
+    <form onsubmit="return validate();" action="{{url_for('admin')}}" method="post">
+        <div class="container" style="text-align: center;">
+            
+            <label for="Branch_code"><b>Branch code : </b></label>
+            <input type="number" id = "Branch_code" placeholder="4- Digits" name="Branch_code" > <br><br>
+
+            <label for="Branch_manager"><b>Admin name : </b></label>
+            <input type="text" id = "Branch_manager" placeholder="Enter Admin name" name="Branch_manager" ><br><br>
+
+            <label for="Admin_Id_Number"><b>Admin_ID : </b></label>
+            <input type="number"  id = "Admin_Id_Number" placeholder="4- Digits" name="Admin_Id_Number" ><br><br>
+
+            <label for="Admin_password"><b>Admin Password : </b></label>
+            <input type="password" id = "Admin_password" placeholder="Enter Password" name="Admin_password" ><br><br>
+     
+            <button type="submit" >Login</button>
+            <label>
+              <input type="checkbox" id = "ad_psw" checked="checked" name="remember"> Remember me
+            </label>
+
+        </div>
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+
+    <script type="text/javascript">
+
+      function validate()
+      {
+          var account_number=document.getElementById("account_number");
+          var customer_name=document.getElementById("customer_name");
+          var customer_id=document.getElementById('customer_id');
+          var Password =document.getElementById("Password ");
+
+          if(account_number.value.trim()=="" )
+              {
+                  alert("please enter the account_number");
+                  return false;
+              }
+          else if (customer_name.value.trim()=="")
+              {
+                 alert("no blank value allowed");
+                  return false;
+              }
+          else if (customer_id.value.trim()=="")
+              {
+                alert("no blank value allowed");
+               return false;
+              }
+          else if (Password.value.trim()=="")
+              {
+                 alert("no blank value allowed");
+                  return false;
+              }
+          else
+          {
+                 true;
+          }
+      }
+
+    </script>
+
+</head>
+<body>
+
+  <h2 style="text-align: center;">welcome to user login</h2>
+    
+  <div id="user">
+
+    <form onsubmit="return validate();" action="{{url_for('userlog')}}" method="post">
+        <div class="container" style="text-align: center;">
+            <label for="account_number"><b>Account number : </b></label>
+            <input type="number" id="account_number" placeholder="Enter your accouNT number" name="account_number" ><br><br>
+
+            <label for="customer_name"><b>Customer name :</b></label>
+            <input type="text" id ="customer_name" placeholder="Enter your name" name="customer_name" ><br><br>
+
+            <label for="customer_id"><b>Customer ID : </b></label>
+            <input type="number" id ="customer_id" placeholder="4_digits" name="customer_id" ><br><br>
+            
+            <label for="Password"><b>Password : </b></label>
+            <input type="password" id ="Password" placeholder="Enter Password" name="Password" ><br><br>
+        
+            <input type="submit" name="alogin">Login</button>
+                                    alogin
+              
+          </div>
+    </form>
+  </div>
+    
+</body>
+</html>

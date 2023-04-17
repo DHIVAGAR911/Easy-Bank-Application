@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user-actions</title>
+    <style type=text/css > 
+    
+        header * {
+        display: grid;
+        }
+        header li {
+        margin: 10px;
+        }
+        
+    </style>     
+</head>
+<body>
+    <header>
+        <h2 style="text-align: center;">Welcome to User page </h2>
+        <ul>
+            <li><a href="#">Acc.No : {{session['account_number']}} </a></li><br>
+            <li><a href="#">Cus_Id : {{session['customer_id']}} </a></li><br>
+            
+            <li><a href="{{url_for('transfer')}}"> Transfer Amount to Account </a></li>
+            <li><a href="#"> check balance </a></li>
+            <li><a href="{{url_for('logout')}}">Log out</a></li>
+    
+        </ul>
+   </header>  
+</body>
+</html> 
